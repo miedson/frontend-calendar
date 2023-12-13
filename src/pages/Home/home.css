@@ -1,0 +1,59 @@
+.form-filter {
+    grid-area: form;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    z-index: 0;
+}
+
+.subtitles {
+    grid-area: s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.2rem;
+    font-size: 1.3rem;
+    caret-color: transparent;
+}
+
+.subtitles > div {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    color: var(--text-color);
+}
+
+.subtitles > div .color{
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: .4rem;
+    border: .3rem solid
+}
+
+.calendar {
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    grid-area: m;
+    justify-self: center;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    .calendar {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .calendar {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        gap: 2rem;
+    }
+}

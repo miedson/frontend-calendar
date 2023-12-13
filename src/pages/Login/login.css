@@ -1,0 +1,72 @@
+.login {
+    height: 100vh;
+    display: grid;
+    align-content: center;
+    gap: 1rem;
+}
+
+.login h1 {
+    margin: auto;
+    color: #fff;
+    caret-color: transparent;
+}
+
+.login form {
+    width: min(40rem, 87%);
+    margin: auto;
+    padding: 5rem;
+    border-radius: .8rem;
+    background-color: var(--primary-100);
+    color: var(--text-color);
+    display: grid;
+    gap: 1rem;
+}
+
+.login form a {
+    text-decoration: none;
+    color: var(--orange-200);
+}
+
+.login form a:hover {
+    color: var(--orange-100);
+}
+
+.email-wrapper, .password-wrapper {
+    display: flex;
+    align-items: center;
+    background-color: var(--primary-300);
+    height: 5rem;
+    padding-inline: 1rem;
+    border-radius: .4rem;
+}
+
+.email-wrapper svg, .password-wrapper svg {
+    font-size: 3rem;
+    color: #5e5e5e;
+}
+
+.email-wrapper:focus-within, .password-wrapper:focus-within {
+    outline: solid var(--orange-200);
+    border-radius: .4rem;
+}
+
+.email-wrapper:focus-within > svg, .password-wrapper:focus-within > svg {
+    color: var(--orange-200);
+}
+
+.login input {
+    color: var(--text-color);
+    background-color: var(--primary-300);
+    height: 100%;
+}
+
+.login input:focus {
+    outline: none;
+}
+
+.login button {
+    width: 100%;
+}
+
+
+

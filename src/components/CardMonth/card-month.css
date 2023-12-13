@@ -1,0 +1,117 @@
+.card-month {
+    width: fit-content;
+    background-color: var(--primary-100);
+    border-radius: .6rem;
+    color: #fff;
+    caret-color: transparent;
+    cursor: default;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.card-month h1 {
+    display: block;
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+.card-month-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+}
+
+.card-month-header > div {
+    width: 3.5rem;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    color: var(--orange-200);
+}
+
+.card-month-body {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1rem;
+}
+
+.card-month-body > div {
+    width: 3.5rem;
+    height: 3.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+}
+
+.card-month-body > div.event::before {
+    content: "";
+    border-style: solid;
+    border-width: .8rem;
+    border-color: transparent var(--text-color) transparent transparent;
+    position: absolute;
+    top: 1.1rem;
+    left: 2.8rem;
+    opacity: 0;
+    z-index: 1;
+}
+
+.card-month-body > div.event::after {
+    content: attr(data-tooltip);
+    width: fit-content;
+    height: fit-content;
+    min-width: 5rem;
+    min-height: 2.2rem;
+    background-color: var(--text-color);
+    border-radius: .4rem;
+    border: none;
+    position: absolute;
+    top: 0;
+    left: 4.3rem;
+    white-space: pre;
+    font-size: 1.4rem;
+    padding: .8rem;
+    color: var(--primary-100);
+    pointer-events: none;
+    opacity: 0;
+    z-index: 1;
+}
+
+.card-month-body > div.event:hover::before {
+    opacity: 1;
+}
+
+.card-month-body > div.event:hover::after {
+    opacity: 1;
+}
+
+.card-month-body > div:not(.day-month-previous):hover {
+    border-radius: .4rem;
+    background-color: var(--orange-100);
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    .card-month {
+        width: fit-content;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 2rem 2.5rem 1fr;
+        gap: 1.5rem;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .card-month {
+        width: fit-content;
+        height: 38rem;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 2rem 2.5rem 1fr;
+        gap: 1.5rem;
+    }
+}

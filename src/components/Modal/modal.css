@@ -1,0 +1,108 @@
+.backdrop {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.backdrop .modal {
+    background-color: #e1e1e1;
+    color: #1e1e1e;
+    padding: 3rem 2rem;
+    border-radius: 0.75rem;
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.backdrop .modal h3 {
+    text-align: center;
+}
+
+.backdrop .modal .modal-close {
+    --size: 2rem;
+    width: var(--size);
+    height: calc(var(--size) * 0.1);
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    color: black;
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    display: flex;
+}
+
+.backdrop .modal .modal-close::before, .backdrop .modal .modal-close::after {
+    content: '';
+    position: absolute;
+    width: var(--size);
+    height: calc(var(--size) * 0.1);
+    background-color: currentColor;
+    border-radius: 0.125rem;
+    left: 0;
+    top: calc(var(--size) / 2);
+}
+
+.backdrop .modal .modal-close::before {
+    transform: rotate(45deg);
+}
+
+.backdrop .modal .modal-close::after {
+    transform: rotate(-45deg);
+}
+
+.form-modal {
+    width: 30rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form-modal form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.events-modal {
+    margin-top: 4rem;
+    caret-color: transparent;
+}
+
+.event-modal {
+    width: 100%;
+    padding: 1rem;
+    border-bottom: .1rem solid var(--primary-100);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    .backdrop .modal {
+        flex-direction: row;
+    }
+    
+    .events-modal {
+        flex-direction: column;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .backdrop .modal {
+        flex-direction: row;
+    }
+    
+    .events-modal {
+        flex-direction: column;
+    }
+}
